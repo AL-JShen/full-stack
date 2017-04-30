@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-const Inventory = new mongoose.Schema({
-  name: 'string',
-  stock: 0,
-  price: 'string',
-//  image: 'string',
+const ItemSchema = new mongoose.Schema({
+  itemName: 'string',
+  itemStock: 'number', 
+  itemPrice: 'string'
 });
 
-module.exports = mongoose.model('inventory', Inventory);
+module.exports = mongoose.model('Item', ItemSchema);

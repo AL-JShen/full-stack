@@ -1,16 +1,15 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+const mongoose = require('mongoose');
 const Item = require('./inventory');
 
-mongoose.connect('mongodb://localhost/fs-inventory');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+mongoose.connect('mongodb://localhost/inventory');
 
-app.listen(5000, () => {
+app.listen('5000', () => {
   console.log('Server listening on port 5000');
 });
 
@@ -29,8 +28,6 @@ app.post('/new-item', (req, res) => {
   const newItem = new Item(req.body);
   newItem.save((err) => {
     if (err) res.send(err);
-    res.send('User added!');
+    res.send('Item added!');
   });
 });
-
-
