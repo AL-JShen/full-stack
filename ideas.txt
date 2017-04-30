@@ -1,0 +1,6 @@
+store type page
+add items (separate page) => react router???
+buy items
+use cards cards layout
+buy button to reduce items
+
