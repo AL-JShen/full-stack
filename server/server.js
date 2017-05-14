@@ -7,6 +7,7 @@ const Item = require('./inventory');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/inventory');
 
 app.listen('5000', () => {
